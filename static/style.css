@@ -27,7 +27,7 @@
 }
 
 .main-bottom-gap {
-    padding-bottom: 12px;
+    padding-bottom: 18px;
 }
 
 .main-sec-top-gap {
@@ -72,10 +72,6 @@
     width: 80%;
     height: auto;
     margin-left: 212px;
-}
-
-.row {
-    flex-direction: row-reverse
 }
 
 .main-text-wrapper {
@@ -128,4 +124,16 @@
     z-index: -1;
     background-image: linear-gradient(214deg, #EEF27E, #568C69);
     transition: all .7s cubic-bezier(.3, 0, .3, 1);
+}
+
+.main-form-wrapper {
+    height: fit-content;
+}
+
+.main-form-input-filed-wrapper {
+    margin: 0 0 0 15px;
+}
+
+.main-form-space {
+    padding: 52px;
 }
