@@ -10,6 +10,34 @@
     margin-top: 16px;
 }
 
+.link-text {
+    color: black;
+}
+
+.main-font {
+    font-family: 'Noto Serif Display', serif;
+}
+
+.sub-font {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-top-gap {
+    padding-top: 12px;
+}
+
+.main-bottom-gap {
+    padding-bottom: 12px;
+}
+
+.main-sec-top-gap {
+    padding-top: 12px;
+}
+
+.main-sec-bottom-gap {
+    padding-bottom: 12px;
+}
+
 .main-nav {
     position: absolute;
     top: 0;
@@ -19,6 +47,11 @@
 
 .main-nav-item {
     padding: 9px 15px;
+}
+
+.main {
+    background-image: url("images/home bg-1.png");
+    background-repeat: no-repeat;
 }
 
 .no-overflow {
@@ -36,10 +69,63 @@
 }
 
 .main-img > img {
-    width: 100%;
+    width: 80%;
     height: auto;
+    margin-left: 212px;
 }
 
 .row {
     flex-direction: row-reverse
+}
+
+.main-text-wrapper {
+    margin: 14.3% 0;
+}
+
+.main-h1 {
+    font-size: 5.9rem;
+}
+
+.main-para {
+    font-size: 1.3rem;
+}
+
+.main-btn a {
+    font-size: 1.2rem;
+}
+
+.main-btn a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.main-btn {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    padding: 9px;
+}
+
+.main-btn::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: -68%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(214deg, #EEF27E, #568C69);
+    transition: all .7s cubic-bezier(.3, 0, .3, 1);
+}
+
+.main-btn:hover::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(214deg, #EEF27E, #568C69);
+    transition: all .7s cubic-bezier(.3, 0, .3, 1);
 }

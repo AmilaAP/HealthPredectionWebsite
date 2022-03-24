@@ -7,17 +7,17 @@
 {% block nav %}
     <div class="main-nav container-fluid">
         <ul class="nav-wrapper row">
-            <li class="col-1 main-nav-item">item</li>
-            <li class="col-1 main-nav-item">item</li>
-            <li class="col-1 main-nav-item">item</li>
-            <li class="col-1 main-nav-item">item</li>
-            <li class="col-1 main-nav-item">item</li>
+            <li class="col-1 main-nav-item"><a src="#">item</a></li>
+            <li class="col-1 main-nav-item"><a src="#">item</a></li>
+            <li class="col-1 main-nav-item"><a src="#">item</a></li>
+            <li class="col-1 main-nav-item"><a src="#">item</a></li>
+            <li class="col-1 main-nav-item"><a src="#">item</a></li>
         </ul>
     </div>
 {% endblock %}
 
 {% block body %}
-    <div class="main">
+    <div class="main main-sec-bottom-gap">
         <div class="full-width container-fluid row">
             <div class="main-right-pan col no-overflow">
                 <div class="main-img">
@@ -26,10 +26,35 @@
             </div>
 
             <div class="main-left-pan col">
-                <div class="main-header"></div>
-                <div class="main-discription"></div>
-                <div class="hpw-btn"></div>
+                <div class="main-text-wrapper">
+                    <div class="main-header main-top-gap main-bottom-gap">
+                        <h1 class="main-h1 display-1 main-font">Lorem Ipsum is simply dummy text</h1>
+                    </div>
+                    <div class="main-discription main-top-gap main-bottom-gap">
+                        <p class="main-para sub-font">Vivamus consequat nibh diam, vel lacinia odio porta vel. Proin
+                            euismod
+                            consequat lacus non blandit. Suspendisse tristique, turpis id fringilla lobortis, mauris
+                            ligula vestibulum diam, eu imperdiet odio mauris eu purus. Proin sed est augue. Suspendisse
+                            cursus congue elit at elementum. Nullam eu facilisis felis. Aliquam vel tellus eu purus
+                            bibendum consequat a vel libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Mauris urna libero, hendrerit vel mi ut, elementum scelerisque purus. Lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit. Aliquam mi sapien, accumsan at imperdiet ut, suscipit sit
+                            amet ipsum. Ut ornare neque risus, id sagittis erat dapibus id. Donec pellentesque dolor at
+                            venenatis congue.</p>
+                    </div>
+                    <div class="hpw-btn main-top-gap main-bottom-gap">
+                        <div class="main-btn no-overflow">
+                            <a class="sub-font link-text" href="#prediction-form">Predict now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+
+    <div id="#prediction-form" class="main-sec-top-gap main-sec-bottom-gap">
+        <div>
+            <p>Prediction form goes here</p>
         </div>
     </div>
 {% endblock %}
