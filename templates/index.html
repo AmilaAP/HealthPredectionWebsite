@@ -18,16 +18,17 @@
 
 {% block body %}
     <div class="main">
-        <div class="full-width container-fluid">
-            <div class="main-left-pan">
+        <div class="full-width container-fluid row">
+            <div class="main-right-pan col no-overflow">
+                <div class="main-img">
+                    <img src="{{ url_for('static', filename='images/main-page-image.png') }}" alt="doctor image">
+                </div>
+            </div>
+
+            <div class="main-left-pan col">
                 <div class="main-header"></div>
                 <div class="main-discription"></div>
                 <div class="hpw-btn"></div>
-            </div>
-            <div class="main-right-pan">
-                <div class="main-img">
-                    <img src="" alt="doctor image">
-                </div>
             </div>
         </div>
     </div>

@@ -10,8 +10,34 @@
     margin-top: 16px;
 }
 
+.main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
 .main-nav-item {
     padding: 9px 15px;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
+.main-right-pan {
+    width: 50%;
+    height: inherit;
+}
+
+.main-img {
+    width: 100%;
+    height: inherit;
+}
+
+.main-img > img {
+    width: 100%;
+    height: auto;
 }
 
 .row {
