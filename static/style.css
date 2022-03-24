@@ -1,0 +1,19 @@
+.full-width {
+    width: 95%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.nav-wrapper {
+    text-decoration: none;
+    list-style: none;
+    margin-top: 16px;
+}
+
+.main-nav-item {
+    padding: 9px 15px;
+}
+
+.row {
+    flex-direction: row-reverse
+}

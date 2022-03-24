@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block nav %}
+    <div class="main-nav container-fluid">
+        <ul class="nav-wrapper row">
+            <li class="col-1 main-nav-item">item</li>
+            <li class="col-1 main-nav-item">item</li>
+            <li class="col-1 main-nav-item">item</li>
+            <li class="col-1 main-nav-item">item</li>
+            <li class="col-1 main-nav-item">item</li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="main">
+        <div class="full-width container-fluid">
+            <div class="main-left-pan">
+                <div class="main-header"></div>
+                <div class="main-discription"></div>
+                <div class="hpw-btn"></div>
+            </div>
+            <div class="main-right-pan">
+                <div class="main-img">
+                    <img src="" alt="doctor image">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
