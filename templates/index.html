@@ -17,692 +17,83 @@
 {% endblock %}
 
 {% block body %}
-    <div class="main main-sec-bottom-gap">
-        <div class="full-width container-fluid row">
-            <div class="main-left-pan col">
-                <div class="main-text-wrapper">
-                    <div class="main-header main-top-gap main-bottom-gap">
-                        <h1 class="main-h1 display-1 main-font">Lorem Ipsum is simply dummy text</h1>
-                    </div>
-                    <div class="main-discription main-top-gap main-bottom-gap">
-                        <p class="main-para sub-font">Vivamus consequat nibh diam, vel lacinia odio porta vel. Proin
-                            euismod
-                            consequat lacus non blandit. Suspendisse tristique, turpis id fringilla lobortis, mauris
-                            ligula vestibulum diam, eu imperdiet odio mauris eu purus. Proin sed est augue. Suspendisse
-                            cursus congue elit at elementum. Nullam eu facilisis felis. Aliquam vel tellus eu purus
-                            bibendum consequat a vel libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Mauris urna libero, hendrerit vel mi ut, elementum scelerisque purus. Lorem ipsum dolor sit
-                            amet, consectetur adipiscing elit. Aliquam mi sapien, accumsan at imperdiet ut, suscipit sit
-                            amet ipsum. Ut ornare neque risus, id sagittis erat dapibus id. Donec pellentesque dolor at
-                            venenatis congue.</p>
-                    </div>
-                    <div class="hpw-btn main-top-gap main-bottom-gap">
-                        <div class="main-btn no-overflow">
-                            <a class="sub-font link-text" href="#prediction-form">Predict now</a>
+    <section class="main-page">
+        <div class="main main-sec-bottom-gap">
+            <div class="full-width container-fluid row">
+                <div class="main-left-pan col">
+                    <div class="main-text-wrapper">
+                        <div class="main-header main-top-gap main-bottom-gap">
+                            <h1 class="main-h1 display-1 main-font">Predict Your Illnesses by Yourself</h1>
                         </div>
+                        <div class="main-discription main-top-gap main-bottom-gap">
+                            <p class="main-para sub-font">Vivamus consequat nibh diam, vel lacinia odio porta vel. Proin
+                                euismod
+                                consequat lacus non blandit. Suspendisse tristique, turpis id fringilla lobortis, mauris
+                                ligula vestibulum diam, eu imperdiet odio mauris eu purus. Proin sed est augue. Suspendisse
+                                cursus congue elit at elementum. Nullam eu facilisis felis. Aliquam vel tellus eu purus
+                                bibendum consequat a vel libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris urna libero, hendrerit vel mi ut, elementum scelerisque purus. Lorem ipsum dolor sit
+                                amet, consectetur adipiscing elit. Aliquam mi sapien, accumsan at imperdiet ut, suscipit sit
+                                amet ipsum. Ut ornare neque risus, id sagittis erat dapibus id. Donec pellentesque dolor at
+                                venenatis congue.</p>
+                        </div>
+                        <div class="hpw-btn main-top-gap main-bottom-gap">
+                            <div class="main-btn no-overflow">
+                                <a class="sub-font link-text" href="/predict" target="_blank">Predict now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-right-pan col no-overflow">
+                    <div class="main-img">
+                        <img src="{{ url_for('static', filename='images/main-page-image.png') }}" alt="doctor image">
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="main-right-pan col no-overflow">
-                <div class="main-img">
-                    <img src="{{ url_for('static', filename='images/main-page-image.png') }}" alt="doctor image">
-                </div>
+    <hr>
+    <br>
+
+    <section class="about">
+        <div class="about-head">
+            <h1 class="heading">About Us</h1>
+        </div>
+
+
+    </section>
+
+    <br>
+    <hr>
+
+    <section class="feedback">
+        <div class="feedback-head">
+            <h1 class="heading"> Send Your Feedback to Us </h1>
+        </div>
+
+         <div class="row">
+            <div class="feedback-content">
+                    <h2 class="title">contact info</h2>
+
+                    <div class="info">
+                        <h3> <i class="fas fa-envelope"></i> amilamunasinghe@gmail.com </h3>
+                        <h3> <i class="fas fa-phone"></i> +94 77 123 4567 </h3>
+                        <h3> <i class="fas fa-phone"></i> +94 11 234 5678</h3>
+                        <h3> <i class="fas fa-map-marker-alt"></i> Gampaha, Sri Lanka. </h3>
+                    </div>
             </div>
-        </div>
-    </div>
 
-    <div id="#prediction-form" class="main-sec-top-gap main-sec-bottom-gap">
-        <div class="main-form-wrapper full-width">
-            {#form  wrpper#}
-            <form action="index.html" method="post" class="container-fluid">
-                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
-                    {#one input block#}
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 1</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
+             <form action="">
+                    <input type="text" placeholder="name" class="box">
+                    <input type="email" placeholder="email" class="box">
+                    <input type="text" placeholder="project" class="box">
+                    <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="Please send your feedback to us. If you did not find your symptoms in the form, please send your symptoms to update our symptoms"></textarea>
+                    <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
+             </form>
+         </div>
+    </section>
 
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 2</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
 
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 3</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 4</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 5</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 6</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 7</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 8</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 9</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 10</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 11</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 12</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    {#                    <div class="main-form-input-filed-wrapper">#}
-                    {#                        <div class="input-label">symptom 13</div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"#}
-                    {#                                   value="option1">#}
-                    {#                            <label class="form-check-label" for="inlineRadio1">yes</label>#}
-                    {#                        </div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"#}
-                    {#                                   value="option2">#}
-                    {#                            <label class="form-check-label" for="inlineRadio2">no</label>#}
-                    {#                        </div>#}
-                    {#                    </div>#}
-                    {##}
-                    {#                    <div class="main-form-input-filed-wrapper">#}
-                    {#                        <div class="input-label">symptom 14</div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"#}
-                    {#                                   value="option1">#}
-                    {#                            <label class="form-check-label" for="inlineRadio1">yes</label>#}
-                    {#                        </div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"#}
-                    {#                                   value="option2">#}
-                    {#                            <label class="form-check-label" for="inlineRadio2">no</label>#}
-                    {#                        </div>#}
-                    {#                    </div>#}
-
-                </div>
-                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
-                    {#one input block#}
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 1</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 2</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 3</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 4</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 5</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 6</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 7</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 8</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 9</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 10</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 11</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 12</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    {#                    <div class="main-form-input-filed-wrapper">#}
-                    {#                        <div class="input-label">symptom 13</div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"#}
-                    {#                                   value="option1">#}
-                    {#                            <label class="form-check-label" for="inlineRadio1">yes</label>#}
-                    {#                        </div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"#}
-                    {#                                   value="option2">#}
-                    {#                            <label class="form-check-label" for="inlineRadio2">no</label>#}
-                    {#                        </div>#}
-                    {#                    </div>#}
-                    {##}
-                    {#                    <div class="main-form-input-filed-wrapper">#}
-                    {#                        <div class="input-label">symptom 14</div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"#}
-                    {#                                   value="option1">#}
-                    {#                            <label class="form-check-label" for="inlineRadio1">yes</label>#}
-                    {#                        </div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"#}
-                    {#                                   value="option2">#}
-                    {#                            <label class="form-check-label" for="inlineRadio2">no</label>#}
-                    {#                        </div>#}
-                    {#                    </div>#}
-
-                </div>
-                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
-                    {#one input block#}
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 1</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 2</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 3</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 4</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 5</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 6</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 7</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 8</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 9</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 10</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 11</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">symptom 12</div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                   id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-                        </div>
-                    </div>
-
-                    {#                    <div class="main-form-input-filed-wrapper">#}
-                    {#                        <div class="input-label">symptom 13</div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"#}
-                    {#                                   value="option1">#}
-                    {#                            <label class="form-check-label" for="inlineRadio1">yes</label>#}
-                    {#                        </div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"#}
-                    {#                                   value="option2">#}
-                    {#                            <label class="form-check-label" for="inlineRadio2">no</label>#}
-                    {#                        </div>#}
-                    {#                    </div>#}
-                    {##}
-                    {#                    <div class="main-form-input-filed-wrapper">#}
-                    {#                        <div class="input-label">symptom 14</div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"#}
-                    {#                                   value="option1">#}
-                    {#                            <label class="form-check-label" for="inlineRadio1">yes</label>#}
-                    {#                        </div>#}
-                    {#                        <div class="form-check form-check-inline">#}
-                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"#}
-                    {#                                   value="option2">#}
-                    {#                            <label class="form-check-label" for="inlineRadio2">no</label>#}
-                    {#                        </div>#}
-                    {#                    </div>#}
-
-                </div>
-
-            </form>
-        </div>
-    </div>
 {% endblock %}

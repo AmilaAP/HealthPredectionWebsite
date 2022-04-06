@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+
 .full-width {
     width: 95%;
     height: 100vh;
@@ -137,3 +140,86 @@
 .main-form-space {
     padding: 52px;
 }
+
+.heading{
+    text-align: center;
+    font-size: 4.5rem;
+    font-family: 'Noto Serif Display', serif;
+}
+
+.feedback .row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feedback-content{
+    flex:1 1 30rem;
+    padding:4rem;
+    padding-bottom: 0;
+}
+
+.feedback-content h2{
+    font-family: 'Noto Serif Display', serif;
+}
+
+.feedback .row form{
+    flex:1 1 45rem;
+    padding:2rem;
+    margin:2rem;
+    margin-bottom: 4rem;
+}
+
+.feedback .row form .box{
+    padding:1.5rem;
+    margin:1rem 0;
+    background:#568C69;
+    color:white;
+    text-transform: none;
+    font-size: 1.7rem;
+    width:100%;
+}
+
+.feedback .row form .box::placeholder{
+    color: lightyellow;
+    text-transform: capitalize;
+}
+
+.feedback .row form .message{
+    height: 15rem;
+    resize: none;
+}
+
+.feedback .row .feedback-content .info h3{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color:black;
+    padding:1rem 0;
+    font-weight: normal;
+}
+
+.feedback .row .feedback-content .info h3 i{
+    padding-right: 2rem;
+    color: #568C69;
+}
+
+.feedback .row form button{
+    color: white;
+}
+
+.btn{
+    padding:.7rem 3rem;
+    background:#568C69;
+    color:#fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border-radius: 5rem;
+}
+
+.feedback .row form button:hover{
+    color: #EEF27E;
+}
+
