@@ -20,7 +20,8 @@
  <div id="#prediction-form" class="main-sec-top-gap main-sec-bottom-gap">
         <div class="main-form-wrapper full-width">
             {#form  wrpper#}
-            <form action="index.html" method="post" class="container-fluid">
+            {#change action destination to main function in app.py#}
+            <form action="{{url_for('main')}}" method="post" class="container-fluid">
                 <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
                     {#one input block#}
                     <div class="main-form-input-filed-wrapper">
