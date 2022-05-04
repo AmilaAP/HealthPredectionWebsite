@@ -17,6 +17,10 @@ def predict():
 def result():
     return render_template('result.html')
 
+@app.route('/predictnew')
+def predictnew():
+    return render_template('predictnew.html')
+
 
 if __name__ == '__main__':
     app.run()
