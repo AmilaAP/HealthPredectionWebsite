@@ -7,17 +7,21 @@
 {% block nav %}
     <div class="main-nav container-fluid">
         <ul class="nav-wrapper row" style="flex-direction: row-reverse">
-            <li class="col-1 main-nav-item"> <a href="./"><i class="fa-solid fa-house"></i></a> <a href="./">Home</a></li>
-            <li class="col-1 main-nav-item"> <a href="./##about"><i class="fa-solid fa-user-group"></i></a> <a href="./##about">About us</a></li>
-            <li class="col-1 main-nav-item"> <a href="./predict"><i class="fa-solid fa-arrow-right"></i></a> <a href="./predict">Predict Now</a></li>
-            <li class="col-1 main-nav-item"> <a href="./##feedback"><i class="fa-solid fa-comment"></i></a> <a href="./##feedback">Feedback</a></li>
+            <li class="col-1 main-nav-item"><a href="./"><i class="fa-solid fa-house"></i></a> <a href="./">Home</a>
+            </li>
+            <li class="col-1 main-nav-item"><a href="./##about"><i class="fa-solid fa-user-group"></i></a> <a
+                    href="./##about">About us</a></li>
+            <li class="col-1 main-nav-item"><a href="./predict"><i class="fa-solid fa-arrow-right"></i></a> <a
+                    href="./predict">Predict Now</a></li>
+            <li class="col-1 main-nav-item"><a href="./##feedback"><i class="fa-solid fa-comment"></i></a> <a
+                    href="./##feedback">Feedback</a></li>
         </ul>
     </div>
 {% endblock %}
 
 
 {% block body %}
- <div id="#prediction-form" class="main-sec-top-gap main-sec-bottom-gap">
+    <div id="#prediction-form" class="main-sec-top-gap main-sec-bottom-gap">
         <div class="main-form-wrapper full-width">
             {#form  wrpper#}
             <form action="predict.html" method="post" class="container-fluid">
@@ -26,16 +30,20 @@
                     <div class="main-form-input-filed-wrapper">
                         <div class="input-label">Itching</div>
                         <div class="form-check form-check-inline">
-                            <label >
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                   value="option1">
-                            <label class="form-check-label" for="inlineRadio1">yes</label
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                   value="option2">
-                            <label class="form-check-label" for="inlineRadio2">no</label>
-
-                        </div>
+                            <label for="itching"> {# update all input blocks with label tag and for argument to create
+                                                     input dictionary to get input to model in prediction page#}
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label> {# remove for keyword from this label if this
+                                                                               didn't work change this to unique value for "for" argument#}
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label> {# remove for keyword from this label if this
+                                                                               didn't work change this to unique value for "for" argument#}
+                                </div>
+                            </label>
                         </div>
                     </div>
 
@@ -2764,7 +2772,7 @@
                 <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
                     {#one input block#}
                     <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">(vertigo) Paroymsal  Positional Vertigo</div>
+                        <div class="input-label">(vertigo) Paroymsal Positional Vertigo</div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                                    value="option1">
