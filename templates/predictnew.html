@@ -7,19 +7,3142 @@
 {% endblock %}
 
 {% block body %}
+    <div id="#prediction-form" class="main-sec-top-gap main-sec-bottom-gap">
+        <div class="main-form-wrapper full-width">
+            {#form  wrpper#}
+            <form action="predict.html" method="post" class="container-fluid">
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Itching</div>
+                        <div class="form-check form-check-inline">
+                            <label for="itching"> {# update all input blocks with label tag and for argument to create
+                                                     input dictionary to get input to model in prediction page#}
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label> {# remove for keyword from this label if this
+                                                                               didn't work change this to unique value for "for" argument#}
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label> {# remove for keyword from this label if this
+                                                                               didn't work change this to unique value for "for" argument#}
+                                </div>
+                            </label>
+                        </div>
+                    </div>
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Skin Rash</div>
+                        <div class="form-check form-check-inline">
+                            <label for="skin_rash">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Continuous Sneezing</div>
+                        <div class="form-check form-check-inline">
+                            <label for="continuous_sneezing">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Shivering</div>
+                        <div class="form-check form-check-inline">
+                            <label for="shivering">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Stomach Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="stomach_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Acidity</div>
+                        <div class="form-check form-check-inline">
+                            <label for="acidity">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Vomiting</div>
+                        <div class="form-check form-check-inline">
+                            <label for="vomiting">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Indigestion</div>
+                        <div class="form-check form-check-inline">
+                            <label for="indigestion">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Muscle Wasting</div>
+                        <div class="form-check form-check-inline">
+                            <label for="muscle_wasting">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Patches in Throat</div>
+                        <div class="form-check form-check-inline">
+                            <label for="patches_in_throat">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Fatigue</div>
+                        <div class="form-check form-check-inline">
+                            <label for="fatigue">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Weight Loss</div>
+                        <div class="form-check form-check-inline">
+                            <label for="weight_loss">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    {#                    <div class="main-form-input-filed-wrapper">#}
+                    {#                        <div class="input-label">symptom 13</div>#}
+                    {#                        <div class="form-check form-check-inline">#}
+                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"#}
+                    {#                                   value="option1">#}
+                    {#                            <label class="form-check-label" for="inlineRadio1">yes</label>#}
+                    {#                        </div>#}
+                    {#                        <div class="form-check form-check-inline">#}
+                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"#}
+                    {#                                   value="option2">#}
+                    {#                            <label class="form-check-label" for="inlineRadio2">no</label>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {##}
+                    {#                    <div class="main-form-input-filed-wrapper">#}
+                    {#                        <div class="input-label">symptom 14</div>#}
+                    {#                        <div class="form-check form-check-inline">#}
+                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"#}
+                    {#                                   value="option1">#}
+                    {#                            <label class="form-check-label" for="inlineRadio1">yes</label>#}
+                    {#                        </div>#}
+                    {#                        <div class="form-check form-check-inline">#}
+                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"#}
+                    {#                                   value="option2">#}
+                    {#                            <label class="form-check-label" for="inlineRadio2">no</label>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Sunken Eyes</div>
+                        <div class="form-check form-check-inline">
+                            <label for="sunken_eyes">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Cough</div>
+                        <div class="form-check form-check-inline">
+                            <label for="cough">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Headache</div>
+                        <div class="form-check form-check-inline">
+                            <label for="headache">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Chest Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="chest_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Back Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="back_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Weakness in Limbs</div>
+                        <div class="form-check form-check-inline">
+                            <label for="weakness_in_limbs">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Chills</div>
+                        <div class="form-check form-check-inline">
+                            <label for="chills">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Joint Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="joint_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellowish Skin</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellowish_skin">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Constipation</div>
+                        <div class="form-check form-check-inline">
+                            <label for="constipation">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pain During Bowel Movements</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pain_during_bowel_movements">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Breathlessness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="breathlessness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Cramps</div>
+                        <div class="form-check form-check-inline">
+                            <label for="cramps">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Weight Gain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="weight_gain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Mood Swings</div>
+                        <div class="form-check form-check-inline">
+                            <label for="mood_swings">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Neck Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="neck_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Muscle Weakness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="muscle_weakness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Stiff Neck</div>
+                        <div class="form-check form-check-inline">
+                            <label for="stiff_neck">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pus Filled Pimples</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pus_filled_pimples">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Burning Micturition</div>
+                        <div class="form-check form-check-inline">
+                            <label for="burning_micturition">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Bladder Discomfort</div>
+                        <div class="form-check form-check-inline">
+                            <label for="bladder_discomfort">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">High Fever</div>
+                        <div class="form-check form-check-inline">
+                            <label for="high_fever">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Nodal Skin Eruptions</div>
+                        <div class="form-check form-check-inline">
+                            <label for="nodal_skin_eruptions">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Ulcers on Tongue</div>
+                        <div class="form-check form-check-inline">
+                            <label for="ulcers_on_tongue">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    {#                    <div class="main-form-input-filed-wrapper">#}
+                    {#                        <div class="input-label">symptom 13</div>#}
+                    {#                        <div class="form-check form-check-inline">#}
+                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"#}
+                    {#                                   value="option1">#}
+                    {#                            <label class="form-check-label" for="inlineRadio1">yes</label>#}
+                    {#                        </div>#}
+                    {#                        <div class="form-check form-check-inline">#}
+                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"#}
+                    {#                                   value="option2">#}
+                    {#                            <label class="form-check-label" for="inlineRadio2">no</label>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {##}
+                    {#                    <div class="main-form-input-filed-wrapper">#}
+                    {#                        <div class="input-label">symptom 14</div>#}
+                    {#                        <div class="form-check form-check-inline">#}
+                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"#}
+                    {#                                   value="option1">#}
+                    {#                            <label class="form-check-label" for="inlineRadio1">yes</label>#}
+                    {#                        </div>#}
+                    {#                        <div class="form-check form-check-inline">#}
+                    {#                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"#}
+                    {#                                   value="option2">#}
+                    {#                            <label class="form-check-label" for="inlineRadio2">no</label>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Loss of Appetite</div>
+                        <div class="form-check form-check-inline">
+                            <label for="loss_of_appetite">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Restlessness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="restlessness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Dehydration</div>
+                        <div class="form-check form-check-inline">
+                            <label for="dehydration">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Dizziness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="dizziness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Weakness of One Body Side</div>
+                        <div class="form-check form-check-inline">
+                            <label for="weakness_of_one_body_side">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Lethargy</div>
+                        <div class="form-check form-check-inline">
+                            <label for="lethargy">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Nausea</div>
+                        <div class="form-check form-check-inline">
+                            <label for="nausea">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Abdominal Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="abdominal_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pain in Anal Region</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pain_in_anal_region">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Sweating</div>
+                        <div class="form-check form-check-inline">
+                            <label for="sweating">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Bruising</div>
+                        <div class="form-check form-check-inline">
+                            <label for="bruising">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Cold Hands and Feets</div>
+                        <div class="form-check form-check-inline">
+                            <label for="cold_hands_and_feets">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Anxiety</div>
+                        <div class="form-check form-check-inline">
+                            <label for="anxiety">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Knee Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="knee_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Swelling Joints</div>
+                        <div class="form-check form-check-inline">
+                            <label for="swelling_joints">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Blackheads</div>
+                        <div class="form-check form-check-inline">
+                            <label for="blackheads">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Foul Smell of Urine</div>
+                        <div class="form-check form-check-inline">
+                            <label for="foul_smell_of urine">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Skin Peeling</div>
+                        <div class="form-check form-check-inline">
+                            <label for="skin_peeling">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Blister</div>
+                        <div class="form-check form-check-inline">
+                            <label for="blister">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Dischromic Patches</div>
+                        <div class="form-check form-check-inline">
+                            <label for="dischromic _patches">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Watering From Eyes</div>
+                        <div class="form-check form-check-inline">
+                            <label for="watering_from_eyes">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Extra Marital Contacts</div>
+                        <div class="form-check form-check-inline">
+                            <label for="extra_marital_contacts">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Diarrhoea</div>
+                        <div class="form-check form-check-inline">
+                            <label for="diarrhoea">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Loss of Balance</div>
+                        <div class="form-check form-check-inline">
+                            <label for="loss_of_balance">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Blurred and Distorted Vision</div>
+                        <div class="form-check form-check-inline">
+                            <label for="blurred_and_distorted_vision">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Altered Sensorium</div>
+                        <div class="form-check form-check-inline">
+                            <label for="altered_sensorium">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Dark Urine</div>
+                        <div class="form-check form-check-inline">
+                            <label for="dark_urine">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Swelling of Stomach</div>
+                        <div class="form-check form-check-inline">
+                            <label for="swelling_of_stomach">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Bloody Stool</div>
+                        <div class="form-check form-check-inline">
+                            <label for="bloody_stool">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Obesity</div>
+                        <div class="form-check form-check-inline">
+                            <label for="obesity">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Hip Joint Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="hip_joint_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Movement Stiffness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="movement_stiffness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Spinning Movements</div>
+                        <div class="form-check form-check-inline">
+                            <label for="spinning_movements">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Scurring</div>
+                        <div class="form-check form-check-inline">
+                            <label for="scurring">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Continuous Feel of Urine</div>
+                        <div class="form-check form-check-inline">
+                            <label for="continuous_feel_of_urine">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Silver Like Dusting</div>
+                        <div class="form-check form-check-inline">
+                            <label for="silver_like_dusting">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Red Sore Around Nose</div>
+                        <div class="form-check form-check-inline">
+                            <label for="red_sore_around_nose">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Teeth Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="missing">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Spotting  Urination</div>
+                        <div class="form-check form-check-inline">
+                            <label for="spotting_ urination">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Passage of Gases</div>
+                        <div class="form-check form-check-inline">
+                            <label for="passage_of_gases">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Irregular Sugar Level</div>
+                        <div class="form-check form-check-inline">
+                            <label for="irregular_sugar_level">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Family History</div>
+                        <div class="form-check form-check-inline">
+                            <label for="family_history">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Lack of Concentration</div>
+                        <div class="form-check form-check-inline">
+                            <label for="lack_of_concentration">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Excessive Hunger</div>
+                        <div class="form-check form-check-inline">
+                            <label for="excessive_hunger">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellowing of Eyes</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellowing_of_eyes">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Distention of Abdomen</div>
+                        <div class="form-check form-check-inline">
+                            <label for="distention_of_abdomen">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Irritation in Anus</div>
+                        <div class="form-check form-check-inline">
+                            <label for="irritation_in_anus">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Swollen Legs</div>
+                        <div class="form-check form-check-inline">
+                            <label for="swollen_legs">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Painful Walking</div>
+                        <div class="form-check form-check-inline">
+                            <label for="painful_walking">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Small Dents in Nails</div>
+                        <div class="form-check form-check-inline">
+                            <label for="small_dents_in_nails">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellow Crust Ooze</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellow_crust_ooze">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Internal Itching</div>
+                        <div class="form-check form-check-inline">
+                            <label for="internal_itching">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Mucoid Sputum</div>
+                        <div class="form-check form-check-inline">
+                            <label for="mucoid_sputum">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">History of Alcohol Consumption</div>
+                        <div class="form-check form-check-inline">
+                            <label for="history_of_alcohol_consumption">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Swollen Blood Vessels</div>
+                        <div class="form-check form-check-inline">
+                            <label for="swollen_blood_vessels">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Unsteadiness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="unsteadiness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Inflammatory Nails</div>
+                        <div class="form-check form-check-inline">
+                            <label for="inflammatory_nails">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Depression</div>
+                        <div class="form-check form-check-inline">
+                            <label for="depression">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Fluid Overload</div>
+                        <div class="form-check form-check-inline">
+                            <label for="fluid_overload">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Swelled Lymph Nodes</div>
+                        <div class="form-check form-check-inline">
+                            <label for="swelled_lymph_nodes">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Malaise</div>
+                        <div class="form-check form-check-inline">
+                            <label for="malaise">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Prominent Veins on Calf</div>
+                        <div class="form-check form-check-inline">
+                            <label for="prominent_veins_on_calf">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Puffy Face and Eyes</div>
+                        <div class="form-check form-check-inline">
+                            <label for="puffy_face_and_eyes">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Fast Heart Rate</div>
+                        <div class="form-check form-check-inline">
+                            <label for="fast_heart_rate">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Irritability</div>
+                        <div class="form-check form-check-inline">
+                            <label for="irritability">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Muscle Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="muscle_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Mild Fever</div>
+                        <div class="form-check form-check-inline">
+                            <label for="mild_fever">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellow Urine</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellow_urine">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Phlegm</div>
+                        <div class="form-check form-check-inline">
+                            <label for="phlegm">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Enlarged Thyroid</div>
+                        <div class="form-check form-check-inline">
+                            <label for="enlarged_thyroid">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Increased Appetite</div>
+                        <div class="form-check form-check-inline">
+                            <label for="increased_appetite">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Visual Disturbances</div>
+                        <div class="form-check form-check-inline">
+                            <label for="visual_disturbances">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Brittle Nails</div>
+                        <div class="form-check form-check-inline">
+                            <label for="brittle_nails">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Drying and Tingling Lips</div>
+                        <div class="form-check form-check-inline">
+                            <label for="drying_and_tingling_lips">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Polyuria</div>
+                        <div class="form-check form-check-inline">
+                            <label for="polyuria">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pain Behind the Eyes</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pain_behind_the_eyes">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Typhos</div>
+                        <div class="form-check form-check-inline">
+                            <label for="toxic_look_(typhos)">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Throat Irritation</div>
+                        <div class="form-check form-check-inline">
+                            <label for="throat_irritation">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Swollen Extremeties</div>
+                        <div class="form-check form-check-inline">
+                            <label for="swollen_extremeties">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Slurred Speech</div>
+                        <div class="form-check form-check-inline">
+                            <label for="slurred_speech">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Red Spots Over Body</div>
+                        <div class="form-check form-check-inline">
+                            <label for="red_spots_over_body">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Belly Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="belly_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Receiving Blood Transfusion</div>
+                        <div class="form-check form-check-inline">
+                            <label for="receiving_blood_transfusion">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Acute Liver Failure</div>
+                        <div class="form-check form-check-inline">
+                            <label for="acute_liver_failure">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Redness of Eyes</div>
+                        <div class="form-check form-check-inline">
+                            <label for="redness_of_eyes">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Rusty Sputum</div>
+                        <div class="form-check form-check-inline">
+                            <label for="rusty_sputum">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Abnormal Menstruation</div>
+                        <div class="form-check form-check-inline">
+                            <label for="abnormal_menstruation">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Receiving Unsterile Injections</div>
+                        <div class="form-check form-check-inline">
+                            <label for="receiving_unsterile_injections">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Coma</div>
+                        <div class="form-check form-check-inline">
+                            <label for="coma">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Sinus Pressure</div>
+                        <div class="form-check form-check-inline">
+                            <label for="sinus_pressure">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Palpitations</div>
+                        <div class="form-check form-check-inline">
+                            <label for="palpitations">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Stomach Bleeding</div>
+                        <div class="form-check form-check-inline">
+                            <label for="stomach_bleeding">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Runny Nose</div>
+                        <div class="form-check form-check-inline">
+                            <label for="runny_nose">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Congestion</div>
+                        <div class="form-check form-check-inline">
+                            <label for="congestion">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Blood in Sputum</div>
+                        <div class="form-check form-check-inline">
+                            <label for="blood_in_sputum">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Loss of Smell</div>
+                        <div class="form-check form-check-inline">
+                            <label for="loss_of_smell">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Chills</div>
+                        <div class="form-check form-check-inline">
+                            <label for="chills">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Joint Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="joint_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellowish Skin</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellowish_skin">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Constipation</div>
+                        <div class="form-check form-check-inline">
+                            <label for="constipation">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pain During Bowel Movements</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pain_during_bowel_movements">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Breathlessness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="breathlessness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Chills</div>
+                        <div class="form-check form-check-inline">
+                            <label for="chills">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Joint Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="joint_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellowish Skin</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellowish_skin">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Constipation</div>
+                        <div class="form-check form-check-inline">
+                            <label for="constipation">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pain During Bowel Movements</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pain_during_bowel_movements">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Breathlessness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="breathlessness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Chills</div>
+                        <div class="form-check form-check-inline">
+                            <label for="chills">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Joint Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="joint_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellowish Skin</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellowish_skin">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Constipation</div>
+                        <div class="form-check form-check-inline">
+                            <label for="constipation">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pain During Bowel Movements</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pain_during_bowel_movements">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Breathlessness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="breathlessness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Chills</div>
+                        <div class="form-check form-check-inline">
+                            <label for="chills">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Joint Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="joint_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellowish Skin</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellowish_skin">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Constipation</div>
+                        <div class="form-check form-check-inline">
+                            <label for="constipation">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pain During Bowel Movements</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pain_during_bowel_movements">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Breathlessness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="breathlessness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Chills</div>
+                        <div class="form-check form-check-inline">
+                            <label for="chills">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Joint Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="joint_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellowish Skin</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellowish_skin">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Constipation</div>
+                        <div class="form-check form-check-inline">
+                            <label for="constipation">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pain During Bowel Movements</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pain_during_bowel_movements">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Breathlessness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="breathlessness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Chills</div>
+                        <div class="form-check form-check-inline">
+                            <label for="chills">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Joint Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="joint_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellowish Skin</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellowish_skin">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Constipation</div>
+                        <div class="form-check form-check-inline">
+                            <label for="constipation">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pain During Bowel Movements</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pain_during_bowel_movements">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Breathlessness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="breathlessness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">(vertigo) Paroymsal Positional Vertigo</div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                   value="option1">
+                            <label class="form-check-label" for="inlineRadio1">yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                   value="option2">
+                            <label class="form-check-label" for="inlineRadio2">no</label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Acne</div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                   value="option1">
+                            <label class="form-check-label" for="inlineRadio1">yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                   value="option2">
+                            <label class="form-check-label" for="inlineRadio2">no</label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Urinary tract infection</div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                   id="inlineRadio1"
+                                   value="option1">
+                            <label class="form-check-label" for="inlineRadio1">yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                   id="inlineRadio2"
+                                   value="option2">
+                            <label class="form-check-label" for="inlineRadio2">no</label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Psoriasis</div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                   id="inlineRadio1"
+                                   value="option1">
+                            <label class="form-check-label" for="inlineRadio1">yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                   id="inlineRadio2"
+                                   value="option2">
+                            <label class="form-check-label" for="inlineRadio2">no</label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Impetigo</div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                   id="inlineRadio1"
+                                   value="option1">
+                            <label class="form-check-label" for="inlineRadio1">yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                   id="inlineRadio2"
+                                   value="option2">
+                            <label class="form-check-label" for="inlineRadio2">no</label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+            <div class="hpw-btn main-top-gap main-bottom-gap">
+                <div class="main-btn no-overflow">
+                    <a class="sub-font link-text" href="/predict" target="_blank">Predict now</a>
+                </div>
+            </div>
+        </div>
+
     </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 {% endblock %}
