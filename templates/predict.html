@@ -1,24 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Predict{% endblock %}
+{% block title %}predictnew{% endblock %}
 {% block head %}
     {{ super() }}
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 {% endblock %}
-
-{% block nav %}
-    <div class="main-nav container-fluid">
-        <ul class="nav-wrapper row" style="flex-direction: row-reverse">
-            <li class="col-1 main-nav-item"><a href="./"><i class="fa-solid fa-house"></i></a> <a href="./">Home</a>
-            </li>
-            <li class="col-1 main-nav-item"><a href="./##about"><i class="fa-solid fa-user-group"></i></a> <a
-                    href="./##about">About us</a></li>
-            <li class="col-1 main-nav-item"><a href="./predict"><i class="fa-solid fa-arrow-right"></i></a> <a
-                    href="./predict">Predict Now</a></li>
-            <li class="col-1 main-nav-item"><a href="./##feedback"><i class="fa-solid fa-comment"></i></a> <a
-                    href="./##feedback">Feedback</a></li>
-        </ul>
-    </div>
-{% endblock %}
-
 
 {% block body %}
     <div id="#prediction-form" class="main-sec-top-gap main-sec-bottom-gap">
@@ -30,37 +16,50 @@
                     <div class="main-form-input-filed-wrapper">
                         <div class="input-label">Itching</div>
                         <div class="form-check form-check-inline">
-                            <label for="itching"> {# update all input blocks with label tag and for argument to create
-                                                     input dictionary to get input to model in prediction page#}
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label> {# remove for keyword from this label if this
-                                                                               didn't work change this to unique value for "for" argument#}
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                           value="option2">
-                                    <label class="form-check-label">no</label> {# remove for keyword from this label if this
-                                                                               didn't work change this to unique value for "for" argument#}
-                                </div>
+                            {#needs to reform blocks according to this form style#}
+                            <label for="itching">
+                                <ul id="itching">
+                                    <li class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="itching" value="1">
+                                        </label>yes
+                                    </li>
+
+                                    <li class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="itching" value="0">
+                                        </label>no
+                                    </li>
+                                </ul>
                             </label>
+                            {##}
                         </div>
                     </div>
+                    {##}
 
+                    {#one input block#}
                     <div class="main-form-input-filed-wrapper">
                         <div class="input-label">Skin Rash</div>
                         <div class="form-check form-check-inline">
+                            {#reforming#}
                             <label for="skin_rash">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                           value="option2">
-                                    <label class="form-check-label">no</label>
-                                </div>
+                                <ul id="skin_rash">
+                                    <li class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="skin_rash" value="1">
+                                        </label>yes
+                                    </li>
+                                    <li class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="skin_rash" value="0">
+                                        </label>no
+                                    </li>
+                                </ul>
                             </label>
+                            {##}
                         </div>
                     </div>
+                    {##}
 
                     <div class="main-form-input-filed-wrapper">
                         <div class="input-label">Continuous Sneezing</div>
@@ -74,7 +73,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -92,7 +91,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -110,7 +109,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -128,7 +127,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -145,7 +144,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -161,7 +161,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -181,7 +182,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -199,7 +200,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -217,7 +218,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -235,7 +236,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -281,7 +282,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -297,7 +299,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -317,7 +320,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -335,7 +338,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -353,7 +356,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -371,7 +374,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -387,7 +390,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -403,7 +407,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -423,7 +428,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -441,7 +446,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -459,7 +464,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -477,7 +482,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -494,7 +499,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -510,7 +516,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -530,7 +537,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -548,7 +555,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -566,7 +573,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -584,7 +591,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -600,7 +607,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -616,7 +624,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -636,7 +645,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -654,7 +663,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -672,7 +681,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -690,7 +699,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -736,7 +745,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -752,7 +762,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -772,7 +783,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -790,7 +801,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -808,7 +819,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -826,7 +837,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -842,7 +853,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -858,7 +870,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -878,7 +891,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -896,7 +909,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -914,7 +927,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -932,7 +945,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -949,7 +962,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -965,7 +979,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -985,7 +1000,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1003,7 +1018,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1021,7 +1036,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1039,7 +1054,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1055,7 +1070,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1071,7 +1087,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1091,7 +1108,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1109,7 +1126,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1127,7 +1144,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1145,7 +1162,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1162,7 +1179,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1178,7 +1196,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1198,7 +1217,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1216,7 +1235,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1234,7 +1253,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1252,7 +1271,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1268,7 +1287,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1284,7 +1304,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1304,7 +1325,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1322,7 +1343,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1340,7 +1361,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1358,7 +1379,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1375,7 +1396,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1391,7 +1413,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1400,7 +1423,7 @@
                     </div>
 
                     <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Spotting  Urination</div>
+                        <div class="input-label">Spotting Urination</div>
                         <div class="form-check form-check-inline">
                             <label for="spotting_ urination">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions"
@@ -1411,7 +1434,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1429,7 +1452,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1447,7 +1470,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1465,7 +1488,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1481,7 +1504,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1497,7 +1521,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1517,7 +1542,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1535,7 +1560,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1553,7 +1578,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1571,7 +1596,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1588,7 +1613,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1604,7 +1630,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1624,7 +1651,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1642,7 +1669,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1660,7 +1687,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1678,7 +1705,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1694,7 +1721,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1710,7 +1738,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1730,7 +1759,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1748,7 +1777,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1766,7 +1795,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1784,7 +1813,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1801,7 +1830,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1817,7 +1847,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1837,7 +1868,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1855,7 +1886,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1873,7 +1904,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1891,7 +1922,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1907,7 +1938,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1923,7 +1955,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -1943,7 +1976,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1961,7 +1994,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1979,7 +2012,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -1997,7 +2030,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2014,7 +2047,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2030,7 +2064,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2050,7 +2085,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2068,7 +2103,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2086,7 +2121,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2104,7 +2139,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2120,7 +2155,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2136,7 +2172,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2156,7 +2193,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2174,7 +2211,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2192,7 +2229,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2210,7 +2247,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2227,7 +2264,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2243,7 +2281,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2263,7 +2302,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2281,7 +2320,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2299,7 +2338,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2317,7 +2356,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2333,7 +2372,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2349,7 +2389,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2369,7 +2410,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2387,7 +2428,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2405,7 +2446,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2423,7 +2464,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2440,7 +2481,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2456,7 +2498,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2476,7 +2519,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2494,7 +2537,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2512,7 +2555,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2530,7 +2573,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2546,7 +2589,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2562,7 +2606,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2582,7 +2627,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2600,7 +2645,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2618,7 +2663,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2636,220 +2681,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
-                    {#one input block#}
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Chills</div>
-                        <div class="form-check form-check-inline">
-                            <label for="chills">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                           value="option2">
                                     <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Joint Pain</div>
-                        <div class="form-check form-check-inline">
-                            <label for="joint_pain">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                           value="option2">
-                                    <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Yellowish Skin</div>
-                        <div class="form-check form-check-inline">
-                            <label for="yellowish_skin">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                       id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                           id="inlineRadio2"
-                                           value="option2">
-                                <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Constipation</div>
-                        <div class="form-check form-check-inline">
-                            <label for="constipation">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                       id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                           id="inlineRadio2"
-                                           value="option2">
-                                <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Pain During Bowel Movements</div>
-                        <div class="form-check form-check-inline">
-                            <label for="pain_during_bowel_movements">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                       id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                           id="inlineRadio2"
-                                           value="option2">
-                                <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Breathlessness</div>
-                        <div class="form-check form-check-inline">
-                            <label for="breathlessness">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                       id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                           id="inlineRadio2"
-                                           value="option2">
-                                <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Chills</div>
-                        <div class="form-check form-check-inline">
-                            <label for="chills">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                           value="option2">
-                                    <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Joint Pain</div>
-                        <div class="form-check form-check-inline">
-                            <label for="joint_pain">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                           value="option2">
-                                    <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Yellowish Skin</div>
-                        <div class="form-check form-check-inline">
-                            <label for="yellowish_skin">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                       id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                           id="inlineRadio2"
-                                           value="option2">
-                                <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Constipation</div>
-                        <div class="form-check form-check-inline">
-                            <label for="constipation">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                       id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                           id="inlineRadio2"
-                                           value="option2">
-                                <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Pain During Bowel Movements</div>
-                        <div class="form-check form-check-inline">
-                            <label for="pain_during_bowel_movements">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                       id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                           id="inlineRadio2"
-                                           value="option2">
-                                <label class="form-check-label">no</label>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="main-form-input-filed-wrapper">
-                        <div class="input-label">Breathlessness</div>
-                        <div class="form-check form-check-inline">
-                            <label for="breathlessness">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                       id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label">yes</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                           id="inlineRadio2"
-                                           value="option2">
-                                <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2866,7 +2698,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2882,7 +2715,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2902,7 +2736,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2920,7 +2754,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2938,7 +2772,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2956,7 +2790,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -2972,7 +2806,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -2988,7 +2823,8 @@
                                        value="option1">
                                 <label class="form-check-label">yes</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
                                            value="option2">
                                     <label class="form-check-label">no</label>
                                 </div>
@@ -3008,7 +2844,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -3026,7 +2862,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -3044,7 +2880,7 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
@@ -3062,7 +2898,224 @@
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                            id="inlineRadio2"
                                            value="option2">
-                                <label class="form-check-label">no</label>
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    {#one input block#}
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Chills</div>
+                        <div class="form-check form-check-inline">
+                            <label for="chills">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Joint Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="joint_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellowish Skin</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellowish_skin">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Constipation</div>
+                        <div class="form-check form-check-inline">
+                            <label for="constipation">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pain During Bowel Movements</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pain_during_bowel_movements">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Breathlessness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="breathlessness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Chills</div>
+                        <div class="form-check form-check-inline">
+                            <label for="chills">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Joint Pain</div>
+                        <div class="form-check form-check-inline">
+                            <label for="joint_pain">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Yellowish Skin</div>
+                        <div class="form-check form-check-inline">
+                            <label for="yellowish_skin">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Constipation</div>
+                        <div class="form-check form-check-inline">
+                            <label for="constipation">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Pain During Bowel Movements</div>
+                        <div class="form-check form-check-inline">
+                            <label for="pain_during_bowel_movements">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="main-form-input-filed-wrapper">
+                        <div class="input-label">Breathlessness</div>
+                        <div class="form-check form-check-inline">
+                            <label for="breathlessness">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                       id="inlineRadio1"
+                                       value="option1">
+                                <label class="form-check-label">yes</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                           id="inlineRadio2"
+                                           value="option2">
+                                    <label class="form-check-label">no</label>
                                 </div>
                             </label>
                         </div>
