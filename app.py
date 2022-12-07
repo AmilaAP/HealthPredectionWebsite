@@ -10,6 +10,7 @@ app = Flask(__name__)
 with open(f'model/model.pkl', 'rb') as file:
     model = pickle.load(file)
 
+
 def get_model():
     with open('model/model.pkl', 'rb') as file:
         model = pickle.load(file)
@@ -72,18 +73,20 @@ def index():
 
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
-    print(flask.request.method)
-    if flask.request.method == 'POST':
-        print('test')
-        return render_template('result.html', symptoms='test456')
-    else:
-        print('test1234')
+    if flask.request.method == 'GET':
+        print(flask.request.method)
+
         return render_template('predict.html')
 
 
 @app.route('/result', methods=['GET', 'POST'])
 def result():
-    return render_template('result.html')
+    if flask.request.method == 'POST':
+        data = flask.request.form.to_dict()
+
+        print(f'{data}')
+
+        return render_template('result.html', symptoms=data)
 
 
 if __name__ == '__main__':
