@@ -6,6 +6,8 @@ from flask import render_template
 
 app = Flask(__name__)
 
+with open(f'model/model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 def get_model():
     with open('model/model.pkl', 'rb') as file:
@@ -67,12 +69,13 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/predict')
+@app.route('/predict', methods=['POST'])
 def predict():
+    print(get_form_data())
     return render_template('predict.html')
 
 
-@app.route('/result')
+@app.route('/result', methods=['GET'])
 def result():
     return render_template('result.html')
 
