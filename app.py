@@ -1,6 +1,7 @@
 import pandas as pd
 import pickle
 import flask
+import sklearn
 from flask import Flask
 from flask import render_template
 
@@ -51,8 +52,8 @@ def get_form_data():
         inputs = inputs.append(flask.request.form.to_dict(), ignore_index=True)
         inputs = inputs.astype(float)
 
-    print('success')
-    return inputs
+        print('success')
+        return inputs
 
 
 def make_prediction():
@@ -69,13 +70,18 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
-    print(get_form_data())
-    return render_template('predict.html')
+    print(flask.request.method)
+    if flask.request.method == 'POST':
+        print('test')
+        return render_template('result.html', symptoms='test456')
+    else:
+        print('test1234')
+        return render_template('predict.html')
 
 
-@app.route('/result', methods=['GET'])
+@app.route('/result', methods=['GET', 'POST'])
 def result():
     return render_template('result.html')
 

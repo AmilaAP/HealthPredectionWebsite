@@ -10,7 +10,7 @@
     <div id="#prediction-form" class="main-sec-top-gap main-sec-bottom-gap">
         <div class="main-form-wrapper full-width">
             {#form  wrpper#}
-            <form action="predict.html" method="post" class="container-fluid">
+            <form action="result" method="POST" class="container-fluid">
                 <div class="row main-bottom-gap main-form-space" style="justify-content: space-around;">
                     {#one input block#}
                     <div class="main-form-input-filed-wrapper">
@@ -2772,13 +2772,12 @@
                         </div>
                     </div>
                 </div>
-
-            </form>
-            <div class="hpw-btn main-top-gap main-bottom-gap">
+                <div class="hpw-btn main-top-gap main-bottom-gap">
                 <div class="main-btn no-overflow">
-                    <a class="sub-font link-text" href="/predict" target="_blank">Predict now</a>
+                    <input type="submit" class="sub-font link-text" value="Predict Now">
                 </div>
             </div>
+            </form>
         </div>
     </div>
 {% endblock %}
